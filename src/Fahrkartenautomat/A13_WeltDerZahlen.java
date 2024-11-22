@@ -1,4 +1,4 @@
-﻿package Fahrkartenautomat;
+package Fahrkartenautomat;
 
 public class A13_WeltDerZahlen {
 
