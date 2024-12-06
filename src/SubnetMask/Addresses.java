@@ -32,9 +32,10 @@ public class Addresses {
                     firstValidNetworkAddress.append('0');
             }
 
-            int plusOne = Integer.parseInt(firstValidNetworkAddress.toString(), 2);
+            long plusOne = Long.parseLong(firstValidNetworkAddress.toString(), 2);
             plusOne++;
-            return Integer.toBinaryString(plusOne);
+            String padding = Long.toBinaryString(plusOne);
+            return String.format("%32s", padding).replace(' ', '0');
         }
         catch (Exception e)
         {
@@ -114,7 +115,9 @@ public class Addresses {
         for (String element : octet)
         {
             int number = Integer.parseInt(element);
-            binaryOctet.append(Integer.toBinaryString(number));
+            String padding = Integer.toBinaryString(number);
+
+            binaryOctet.append(String.format("%8s", padding).replace(' ', '0'));
         }
         return binaryOctet.toString();
     }
